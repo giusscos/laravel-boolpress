@@ -11,6 +11,16 @@
                     {{ $post->category ? $post->category->name : 'Nessuna categoria' }}
                 </h3>
                 <div class="col-4 pb-3">
+                    <div>
+                        Tags:
+                        <ul>
+                            @foreach ($post->tags as $tag)
+                                <li>
+                                    {{ $tag->name }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                     <span class="row">
                         Creato il: {{ $post->created_at }}
                     </span>

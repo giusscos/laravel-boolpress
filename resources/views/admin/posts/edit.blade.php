@@ -40,6 +40,18 @@
                     </div>
                 @enderror
             </div>
+            <div class="form-check py-2">
+                <div>
+                    Tags
+                </div>
+                @foreach ($tags as $tag)
+                    <span class="px-4">
+                        <input class="form-check-input" type="checkbox" name="tags[]" value="{{ $tag->id }}"
+                            id="tag-{{ $tag->id }}" @if( in_array($tag->id ,old('tags', $post->tags->pluck('id')->all()))) checked @endif>
+                        <label class="form-check-label" for="tag-{{ $tag->id }}">{{ $tag->name }}</label>
+                    </span>
+                @endforeach
+            </div>
             <div class="form-group">
                 <label for="content">Contenuto</label>
                 <textarea rows="10" class="form-control @error('content') is-invalid @enderror" id="content" name="content">{{ old('content', $post->content) }}</textarea>
