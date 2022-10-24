@@ -36,7 +36,9 @@
                             <ul>
                                 @foreach($post->tags as $tag)
                                     <li>
-                                        {{ $tag->name }}
+                                        <a href="{{route('admin.tags.show', $tag)}}">
+                                            {{ $tag->name }}
+                                        </a>
                                     </li>
                                 @endforeach
                             </ul>
