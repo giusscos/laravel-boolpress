@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 class Post extends Model
 {
     protected $fillable = [
+        'cover',
         'title',
         'content',
         'slug',

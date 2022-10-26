@@ -12,9 +12,22 @@
         </div>
     </div>
     <div class="container">
-        <form action={{ route('admin.posts.update', $post) }} method="POST">
+        <form action={{ route('admin.posts.update', $post) }} method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
+            
+            <div class="form-group">
+                <label for="cover">Copertina Post</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input @error('cover') is-invalid @endif" name="cover" id="cover">
+                      <label class="custom-file-label" for="cover">Choose file</label>
+                    </div>
+                @error('cover')
+                    <div class="alert alert-danger mt-2">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
             <div class="form-group">
                 <label for="title">Titolo</label>
                 <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
