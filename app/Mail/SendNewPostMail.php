@@ -28,6 +28,6 @@ class SendNewPostMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.post_created');
+        return $this->markdown('mail.post_created');
     }
 }

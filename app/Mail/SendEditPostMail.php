@@ -28,6 +28,6 @@ class SendEditPostMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.post_updated');
+        return $this->markdown('mail.post_updated');
     }
 }
