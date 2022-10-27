@@ -21,9 +21,7 @@
                         <th>Slug</th>
                         <th>Categoria</th>
                         <th>Tag</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th colspan="3">Azioni</th>
                     </tr>
                 </thead>
                 @foreach ($posts as $post)
