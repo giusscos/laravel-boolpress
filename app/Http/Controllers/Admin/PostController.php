@@ -71,7 +71,7 @@ class PostController extends Controller
             $post->tags()->sync([]);
         }
 
-        Mail::to($request->user())->send(new SendNewPostMail());
+        Mail::to($request->user())->send(new SendNewPostMail($post));
 
         return redirect()->route('admin.posts.show', $post);
     }
@@ -133,7 +133,7 @@ class PostController extends Controller
             $post->tags()->sync([]);
         }
 
-        Mail::to($request->user())->send(new SendEditPostMail);
+        Mail::to($request->user())->send(new SendEditPostMail($post));
 
         return redirect()->route('admin.posts.show', $post);
     }
