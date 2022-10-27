@@ -49576,6 +49576,21 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var inputFileEl = document.querySelectorAll('.custom-file-input');
+var labelFileEl = document.querySelectorAll('.custom-file-label');
+labelFileEl.forEach(function (el) {
+  el.innerHTML = 'Scegli file';
+});
+inputFileEl.forEach(function (item) {
+  item.addEventListener('change', function (el) {
+    // console.log(el.target.files)
+    var files = el.target.files;
+    var lastIndex = files.lenght;
+    labelFileEl.forEach(function (el) {
+      el.innerHTML = files.item(lastIndex).name;
+    });
+  });
+});
 
 /***/ }),
 

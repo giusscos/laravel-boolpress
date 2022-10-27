@@ -20,7 +20,7 @@
                 <label for="cover">Copertina Post</label>
                     <div class="custom-file">
                       <input type="file" class="custom-file-input @error('cover') is-invalid @endif" name="cover" id="cover">
-                      <label class="custom-file-label" for="cover">Choose file</label>
+                      <label class="custom-file-label" for="cover"></label>
                     </div>
                 @error('cover')
                     <div class="alert alert-danger mt-2">

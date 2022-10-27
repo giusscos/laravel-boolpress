@@ -30,3 +30,25 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+const inputFileEl = document.querySelectorAll('.custom-file-input')
+const labelFileEl = document.querySelectorAll('.custom-file-label')
+
+labelFileEl.forEach((el) => {
+    el.innerHTML = 'Scegli file'
+})
+
+inputFileEl.forEach((item) => {
+    item.addEventListener('change', (el) => {
+        // console.log(el.target.files)
+        let files = el.target.files
+        let lastIndex = files.lenght;
+
+        labelFileEl.forEach((el) => {
+            el.innerHTML = files.item(lastIndex).name
+        })
+    })
+
+})
+
+
