@@ -8,6 +8,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Mail\SendNewPostMail;
+use App\Mail\SendEditPostMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
@@ -131,6 +132,8 @@ class PostController extends Controller
         } else{
             $post->tags()->sync([]);
         }
+
+        Mail::to($request->user())->send(new SendEditPostMail);
 
         return redirect()->route('admin.posts.show', $post);
     }

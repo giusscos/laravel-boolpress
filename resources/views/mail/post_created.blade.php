@@ -1,3 +1,3 @@
 <h1>
-    Ciao Email
+    Hai creato un post con successo!
 </h1>
