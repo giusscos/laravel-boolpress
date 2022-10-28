@@ -2006,12 +2006,14 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("article", {
-    staticClass: "bg-gray-200 rounded-lg text-center py-3"
-  }, [_c("h3", {
-    staticClass: "text-3xl px-2"
-  }, [_vm._v("\n        " + _vm._s(_vm.post.title) + "\n    ")]), _vm._v(" "), _c("span", {
-    staticClass: "rounded-md bg-gray-400 text-white hover:bg-gray-600 cursor-pointer px-2 my-5"
-  }, [_vm._v("\n        " + _vm._s(_vm.post.category.name) + "\n    ")]), _vm._v(" "), _vm.post.cover_path ? _c("img", {
+    staticClass: "bg-gray-200 rounded-lg text-center py-3 cursor-pointer"
+  }, [_c("span", {
+    staticClass: "text-sm"
+  }, [_vm._v("\n        " + _vm._s(_vm.post.date) + "\n    ")]), _vm._v(" "), _c("h3", {
+    staticClass: "text-3xl px-2 py-3"
+  }, [_vm._v("\n        " + _vm._s(_vm.post.title) + "\n    ")]), _vm._v(" "), _vm.post.category ? _c("span", {
+    staticClass: "rounded-md bg-gray-400 text-white hover:bg-gray-600 cursor-pointer py-1 px-2"
+  }, [_vm._v("\n        " + _vm._s(_vm.post.category.name) + "\n    ")]) : _vm._e(), _vm._v(" "), _vm.post.cover_path ? _c("img", {
     staticClass: "py-2 aspect-square",
     attrs: {
       src: _vm.post.cover_path,
@@ -2024,7 +2026,12 @@ var render = function render() {
       key: tag.id,
       staticClass: "rounded-md bg-red-400 text-white hover:bg-red-600 cursor-pointer py-1 px-2"
     }, [_vm._v("\n            " + _vm._s(tag.name) + "\n        ")]);
-  }), 0)]);
+  }), 0), _vm._v(" "), _c("a", {
+    staticClass: "rounded-md bg-blue-400 text-white hover:bg-blue-600 cursor-pointer py-1 px-2",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Vai all'articolo")])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
