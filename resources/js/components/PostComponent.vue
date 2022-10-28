@@ -16,7 +16,8 @@
                 {{ tag.name }}
             </li>
         </ul>
-        <a class="rounded-md bg-blue-400 text-white hover:bg-blue-600 cursor-pointer py-1 px-2" href="#">Vai all'articolo</a>
+        <a class="rounded-md bg-blue-400 text-white hover:bg-blue-600 cursor-pointer py-1 px-2" 
+        :href="`admin/posts/${post.id}`">Vai all'articolo</a>
     </article>
 </template>
 <script>
