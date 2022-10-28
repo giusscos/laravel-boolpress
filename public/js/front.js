@@ -2008,7 +2008,7 @@ var render = function render() {
   }), 0), _vm._v(" "), _c("a", {
     staticClass: "rounded-md bg-blue-400 text-white hover:bg-blue-600 cursor-pointer py-1 px-2",
     attrs: {
-      href: "admin/posts/".concat(_vm.post.id)
+      href: _vm.post.post_route
     }
   }, [_vm._v("Vai all'articolo")])]);
 };

@@ -54,5 +54,9 @@ class Post extends Model
         return $this->created_at->format('d/m/Y');
     }
 
-    protected $appends = ['cover_path', 'date'];
+    public function getPostRouteAttribute () {
+        return route('admin.posts.show', $this->id);
+    }
+
+    protected $appends = ['cover_path', 'date', 'post_route'];
 }
