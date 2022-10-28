@@ -4,11 +4,16 @@
             {{ title }}
         </h1>
         <div>
-            <div class="grid grid-cols-3 gap-10">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                 <PostComponent v-for="post in posts" :key="post.id" :post="post" />
             </div>
             <div class="flex justify-center gap-10 py-5 cursor-pointer">
-                <span @click="getPosts(page)" v-for="page in lastPage" :key="page">
+                <span @click="getPosts(page)" :class="{
+                    'bg-gray-600 text-white': page === currentPage,
+                    'bg-gray-300 ': page !== currentPage,
+                    'px-2 py-1 rounded-xl hover:bg-gray-600 hover:text-white' : true
+                }"
+                v-for="page in lastPage" :key="page">
                     {{ page }}
                 </span>
             </div>

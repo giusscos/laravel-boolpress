@@ -2037,7 +2037,7 @@ var render = function render() {
   }, [_c("h1", {
     staticClass: "basis-full text-center text-3xl"
   }, [_vm._v("\n        " + _vm._s(_vm.title) + "\n    ")]), _vm._v(" "), _c("div", [_c("div", {
-    staticClass: "grid grid-cols-3 gap-10"
+    staticClass: "grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
   }, _vm._l(_vm.posts, function (post) {
     return _c("PostComponent", {
       key: post.id,
@@ -2050,6 +2050,11 @@ var render = function render() {
   }, _vm._l(_vm.lastPage, function (page) {
     return _c("span", {
       key: page,
+      "class": {
+        "bg-gray-600 text-white": page === _vm.currentPage,
+        "bg-gray-300 ": page !== _vm.currentPage,
+        "px-2 py-1 rounded-xl hover:bg-gray-600 hover:text-white": true
+      },
       on: {
         click: function click($event) {
           return _vm.getPosts(page);
