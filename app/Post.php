@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Post extends Model
@@ -44,4 +45,14 @@ class Post extends Model
 
         return $slug;
     }
+
+    public function getCoverPathAttribute () {
+        return $this->cover ? Storage::disk('images')->url($this->cover) : null;
+    }
+
+    public function getDateAttribute () {
+        return $this->created_at->format('d/m/Y');
+    }
+
+    protected $appends = ['cover_path', 'date'];
 }
