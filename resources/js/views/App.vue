@@ -1,6 +1,7 @@
 <template>
     <div class="container mx-auto px-2 flex gap-5 flex-wrap items-center justify-center">
-        <h1 class="basis-full text-center text-3xl">
+        <router-view></router-view>
+        <!-- <h1 class="basis-full text-center text-3xl">
             {{ title }}
         </h1>
         <div>
@@ -17,7 +18,7 @@
                     {{ page }}
                 </span>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
