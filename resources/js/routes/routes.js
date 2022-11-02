@@ -1,5 +1,6 @@
 import home from '../pages/home.vue'
 import about from '../pages/about.vue'
+import contacts from '../pages/contacts.vue'
 import postsIndex from '../pages/posts.index.vue'
 
 const routes = [
@@ -12,6 +13,11 @@ const routes = [
         path: '/about',
         name: 'about',
         component: about
+    },
+    {
+        path: '/contacts',
+        name: 'contacts',
+        component: contacts
     },
     {
         path: '/blog',

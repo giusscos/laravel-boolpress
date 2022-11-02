@@ -25,8 +25,13 @@ export default {
                 },
                 {
                     'name': 'about',
-                    'route': '/chi-siamo',
+                    'route': '/about',
                     'text': 'About',
+                },
+                {
+                    'name': 'contacts',
+                    'route': '/contacts',
+                    'text': 'Contacts',
                 },
                 {
                     'name': 'posts.index',
