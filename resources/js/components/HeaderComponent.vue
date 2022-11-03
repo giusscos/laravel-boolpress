@@ -1,13 +1,15 @@
 <template>
-    <header class="flex w-full py-3">
-        <div class="mr-auto">
-            <h1>
-                Logo
-            </h1>
+    <header class="py-3 w-full">
+        <div class="container mx-auto flex w-full">
+            <div class="mr-auto">
+                <h1>
+                    Logo
+                </h1>
+            </div>
+            <nav>
+                <NavList :links="navLinks" />
+            </nav>
         </div>
-        <nav>
-            <NavList :links="navLinks" />
-        </nav>
     </header>
 </template>
 <script>

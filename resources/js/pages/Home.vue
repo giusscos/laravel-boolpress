@@ -1,12 +1,17 @@
 <template>
-    <div>
-        <h1>
+    <main>
+        <h1 class="text-5xl text-center">
             Home
         </h1>
-    </div>
+    </main>
 </template>
 <script>
-export default {
-    name: 'home',
+import DefaultLayout from '../layouts/default.vue';
+
+export default{
+    name: "Home",
+    components: {
+        DefaultLayout,
+    }
 }
 </script>

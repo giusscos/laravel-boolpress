@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <h1>
+    <main>
+        <h1 class="text-5xl text-center">
             About
         </h1>
-    </div>
+    </main>
 </template>
 <script>
-    export default {
-        name: 'about'
-    }
+export default {
+    name: 'about'
+}
 </script>

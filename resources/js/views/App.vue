@@ -1,16 +1,20 @@
 <template>
-    <div class="container mx-auto px-2 flex gap-5 flex-wrap items-center justify-center">
-        <NavComponent />
+    <Default>
         <router-view></router-view>
-    </div>
+    </Default>
 </template>
 <script>
-import NavComponent from '../components/NavComponent.vue';
+import Default from '../layouts/Default.vue';
 
-export default{
+export default {
     name: "App",
     components: {
-        NavComponent,
+        Default
     }
 }
 </script>
+<style lang="scss" scoped>
+main {
+    flex-grow: 1;
+}
+</style>

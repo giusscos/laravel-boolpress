@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <h1>
+    <main>
+        <h1 class="text-5xl text-center">
             Contacts
         </h1>
-    </div>
+    </main>
 </template>
 <script>
-    export default {
-        name: 'contacts'
-    }
+export default {
+    name: 'contacts'
+}
 </script>
