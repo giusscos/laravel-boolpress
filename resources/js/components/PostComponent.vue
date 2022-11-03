@@ -1,5 +1,6 @@
 <template>
-    <article class="bg-gray-200 rounded-lg text-center py-3 cursor-pointer">
+    <article class="bg-gray-200 rounded-lg text-center py-3 relative">
+        <router-link :to="{name: 'posts.show', params: {slug: post.slug}}" :slug="post.slug" class="card-link"></router-link>
         <span class="text-sm">
             {{post.date}}
         </span>
@@ -15,9 +16,7 @@
             v-for="tag in post.tags" :key="tag.id">
                 {{ tag.name }}
             </li>
-        </ul>
-        <a class="rounded-md bg-blue-400 text-white hover:bg-blue-600 cursor-pointer py-1 px-2" 
-        :href="post.post_route">Vai all'articolo</a>
+        </ul> 
     </article>
 </template>
 <script>
@@ -28,3 +27,12 @@ export default{
     }
 }
 </script>
+<style lang="scss" scoped>
+.card-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>

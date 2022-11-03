@@ -48,7 +48,6 @@ export default {
         })
         .then((res) => {
           const { data, current_page, last_page, total } = res.data.posts;
-          console.log(res.data.posts);
           this.posts = data;
           this.currentPage = current_page;
           this.lastPage = last_page;
