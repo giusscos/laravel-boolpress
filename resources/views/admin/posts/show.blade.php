@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-10">
-                @if($post->cover)
+                @if ($post->cover_path)
                     <div class="col-3">
-                        <img width="300" src="{{ $post->cover_path }}" alt="{{$post->slug}}">
+                        <img width="300" src="{{ $post->cover_path }}" alt="{{ $post->slug }}">
                     </div>
                 @endif
                 <h1>

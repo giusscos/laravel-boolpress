@@ -11,19 +11,19 @@
             {{ post.category.name }}
         </span>
         <img class="py-2 aspect-square" v-if="post.cover_path" :src="post.cover_path" :alt="post.title">
-        <ul class="flex gap-10 justify-center items-center p-2">
-            <li class="rounded-md bg-red-400 text-white hover:bg-red-600 cursor-pointer py-1 px-2" 
-            v-for="tag in post.tags" :key="tag.id">
-                {{ tag.name }}
-            </li>
-        </ul> 
+        <TagsComponent :tags="post.tags" />
     </article>
 </template>
 <script>
+import TagsComponent from './TagsComponent.vue'
+
 export default{
     name: 'PostComponent',
     props: {
         post: Object,
+    },
+    components: {
+        TagsComponent,
     }
 }
 </script>
