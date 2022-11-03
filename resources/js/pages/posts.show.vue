@@ -1,5 +1,5 @@
 <template>
-  <div class="py-10 px-5">
+  <div class="py-10 px-5" v-if="post">
       <h1 class="text-2xl text-center capitalize">
         {{ post.title }}
       </h1>
@@ -11,7 +11,7 @@
           {{post.date}}
         </span>
       </div>
-      <div class="aspect-video">
+      <div class="aspect-video rounded-2xl overflow-hidden">
         <img class="h-full w-full object-fit object-center" 
         v-if="post.cover_path" :src="post.cover_path" :alt="post.title">
       </div>
@@ -34,15 +34,18 @@ export default {
   props: ['slug'],
   methods: {
     getPost(){
-      
       axios
       .get(`/api/posts/${this.slug}`)
       .then((res) => {
-        // console.log(res.data)
         const { post } = res.data
         this.post = post
       }).catch((err) => {
-        console.log(err)
+        const {status } = err.response
+        switch(status) {
+          case 404: this.$router.replace({name: 'page404'})
+                      break;
+          default: console.log(`Errore sconosciuto: ${err}`)
+        }
       })
     }
   },
