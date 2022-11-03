@@ -2448,11 +2448,13 @@ var render = function render() {
   var _vm$post$category;
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("h1", {
-    staticClass: "text-2xl capitalize"
+  return _c("div", {
+    staticClass: "py-10 px-5"
+  }, [_c("h1", {
+    staticClass: "text-2xl text-center capitalize"
   }, [_vm._v("\n      " + _vm._s(_vm.post.title) + "\n    ")]), _vm._v(" "), _c("div", {
     staticClass: "flex justify-between py-2"
-  }, [_c("span", [_vm._v("\n        " + _vm._s((_vm$post$category = _vm.post.category) === null || _vm$post$category === void 0 ? void 0 : _vm$post$category.name) + "\n      ")]), _vm._v(" "), _c("span", [_vm._v("\n        " + _vm._s(_vm.post.date) + "\n      ")]), _vm._v(" "), _c("div", {
+  }, [_c("span", [_vm._v("\n        " + _vm._s((_vm$post$category = _vm.post.category) === null || _vm$post$category === void 0 ? void 0 : _vm$post$category.name) + "\n      ")]), _vm._v(" "), _c("span", [_vm._v("\n        " + _vm._s(_vm.post.date) + "\n      ")])]), _vm._v(" "), _c("div", {
     staticClass: "aspect-video"
   }, [_vm.post.cover_path ? _c("img", {
     staticClass: "h-full w-full object-fit object-center",
@@ -2460,7 +2462,7 @@ var render = function render() {
       src: _vm.post.cover_path,
       alt: _vm.post.title
     }
-  }) : _vm._e()])]), _vm._v(" "), _c("TagsComponent", {
+  }) : _vm._e()]), _vm._v(" "), _c("TagsComponent", {
     attrs: {
       tags: _vm.post.tags
     }

@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <h1 class="text-2xl capitalize">
+  <div class="py-10 px-5">
+      <h1 class="text-2xl text-center capitalize">
         {{ post.title }}
       </h1>
       <div class="flex justify-between py-2">
@@ -10,10 +10,10 @@
         <span>
           {{post.date}}
         </span>
-        <div class="aspect-video">
-          <img class="h-full w-full object-fit object-center" 
-          v-if="post.cover_path" :src="post.cover_path" :alt="post.title">
-        </div>
+      </div>
+      <div class="aspect-video">
+        <img class="h-full w-full object-fit object-center" 
+        v-if="post.cover_path" :src="post.cover_path" :alt="post.title">
       </div>
       <TagsComponent :tags="post.tags" />
       <p>
